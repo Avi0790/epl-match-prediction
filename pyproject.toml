@@ -1,0 +1,25 @@
+[project]
+name = "epl-predictor"
+version = "0.3.0"
+description = "Auditable EPL ingestion and chronological prediction baselines"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy==2.3.5", "pandas==2.2.3", "scipy==1.17.0", "scikit-learn==1.8.0",
+  "xgboost==3.0.5", "matplotlib==3.10.8", "joblib==1.5.3", "tzdata>=2025.2"
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["epl_data", "epl_model"]
+py-modules = ["data_ingest", "features", "train", "evaluate", "predict", "weekly_update",
+              "features_xg", "models_xg", "train_xg", "compare_models", "predict_week",
+              "understat_to_jsonl", "fetch_xg"]
+
+[tool.setuptools.package-data]
+epl_data = ["schema.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

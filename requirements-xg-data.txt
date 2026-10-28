@@ -1,0 +1,4 @@
+# Optional acquisition environment; not required for bundled data or predictions.
+numpy==2.3.5
+pandas==2.2.3
+soccerdata==2026.43.0
